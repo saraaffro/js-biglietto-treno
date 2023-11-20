@@ -20,7 +20,7 @@ const userAge = parseInt(prompt("Inserisci la tua età"));
 console.log("età: ", userAge);
 
 // calcolare prezzo del viaggio (0,21 * km), tenendo conto degli sconti
-const ticketPrice = nbKilometers * (21 / 10);
+const ticketPrice = nbKilometers * (21 / 100);
 
 console.log("Il costo di un biglietto normale è: ", ticketPrice);
 
@@ -28,17 +28,17 @@ let userTicket = ticketPrice
 
 if (userAge < 18){
     userTicket = ticketPrice - (ticketPrice / 100) * 20; 
-    document.getElementById("biglietto").innerHTML = `Dato che sei minorenne e hai accesso a uno sconto del 20%, il costo del tuo biglietto è di: ${parseFloat(userTicket).toFixed(2)} €`;
+    document.getElementById("biglietto").innerHTML = `Dato che sei minorenne e hai accesso a uno sconto del 20%, il costo del tuo biglietto è di: ${userTicket.toFixed(2)} €`;
 } else if (userAge > 65){
     userTicket = ticketPrice - (ticketPrice / 100) * 40;
-    document.getElementById("biglietto").innerHTML = `Dato che sei over 65 e hai accesso a uno sconto del 40%, il costo del tuo biglietto è di: ${parseFloat(userTicket).toFixed(2)} €`;
+    document.getElementById("biglietto").innerHTML = `Dato che sei over 65 e hai accesso a uno sconto del 40%, il costo del tuo biglietto è di: ${userTicket.toFixed(2)} €`;
 } else{
-    document.getElementById("biglietto").innerHTML = `Il costo del tuo biglietto è di: ${parseFloat(userTicket).toFixed(2)} €`;
+    document.getElementById("biglietto").innerHTML = `Il costo del tuo biglietto è di: ${userTicket.toFixed(2)} €`;
 }
 
 
 console.log("Il costo del tuo biglietto è: ", userTicket);
 
 // output prezzo
-// document.getElementById("biglietto").innerHTML = `Il costo del tuo biglietto è di: ${parseFloat(userTicket).toFixed(2)} €`
+// document.getElementById("biglietto").innerHTML = `Il costo del tuo biglietto è di: ${userTicket.toFixed(2)} €`
 
